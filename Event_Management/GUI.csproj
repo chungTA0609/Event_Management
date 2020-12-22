@@ -48,11 +48,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AJob.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AJob.Designer.cs">
+      <DependentUpon>AJob.cs</DependentUpon>
+    </Compile>
     <Compile Include="Connected Services\ServiceReference1\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Cons.cs" />
     <Compile Include="fDailyPlan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,8 +90,13 @@
     <Compile Include="OneEvent.Designer.cs">
       <DependentUpon>OneEvent.cs</DependentUpon>
     </Compile>
+    <Compile Include="PlanData.cs" />
+    <Compile Include="PlanItem.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AJob.resx">
+      <DependentUpon>AJob.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="fDailyPlan.resx">
       <DependentUpon>fDailyPlan.cs</DependentUpon>
     </EmbeddedResource>

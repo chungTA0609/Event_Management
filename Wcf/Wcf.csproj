@@ -46,6 +46,7 @@
   <ItemGroup>
     <Compile Include="Account.cs" />
     <Compile Include="DataConstractAttribute.cs" />
+    <Compile Include="Event_A.cs" />
     <Compile Include="IService1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service1.cs" />

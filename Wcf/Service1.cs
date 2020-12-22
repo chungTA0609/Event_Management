@@ -25,7 +25,7 @@ namespace Wcf
         void ConnectToDb()
         {
             connStringBuilder = new SqlConnectionStringBuilder();
-            connStringBuilder.DataSource = @"DESKTOP-PD5JGU6\SQLEXPRESS";//Database Account
+            connStringBuilder.DataSource = @"CHUNG";//Database Account
             connStringBuilder.InitialCatalog = "EVENT_MANAGEMENT";//Database Name
             connStringBuilder.Encrypt = true;
             connStringBuilder.TrustServerCertificate = true;
@@ -74,6 +74,39 @@ namespace Wcf
                 return comm.ExecuteNonQuery();
             }
             catch(Exception ex)
+            {
+                throw;
+            }
+            finally
+            {
+                if (conn != null)
+                {
+                    conn.Close();
+                }
+            }
+        }
+        
+
+        public int InsertE(Event_A e)
+        {
+            try
+            {
+                comm.CommandText = "INSERT INTO Account VALUES(@id, @name, @eventStatus, @dataEvent, @timeStart, @timeEnd, @descriptionEvent, @creatBy,@creatAt);";
+                comm.Parameters.AddWithValue("id", e.Id);
+                comm.Parameters.AddWithValue("name", e.name);
+                comm.Parameters.AddWithValue("eventStatus", e.eventStatus);
+                comm.Parameters.AddWithValue("dataEvent", e.dataEvent);
+                comm.Parameters.AddWithValue("timeStart", e.timeStart);
+                comm.Parameters.AddWithValue("timeEnd", e.timeEnd);
+                comm.Parameters.AddWithValue("descriptionEvent", e.descriptionEvent);
+                comm.Parameters.AddWithValue("createBy", e.createBy);
+                comm.Parameters.AddWithValue("creatAt", e.createAt);
+
+                comm.CommandType = CommandType.Text;
+                conn.Open();
+                return comm.ExecuteNonQuery();
+            }
+            catch (Exception ex)
             {
                 throw;
             }

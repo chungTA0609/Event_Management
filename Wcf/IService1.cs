@@ -19,6 +19,9 @@ namespace Wcf
 
         [OperationContract]
         int InsertAccount(Account account);
+        [OperationContract]
+        int InsertE(Event_A e);
+
 
         // TODO: Add your service operations here
     }
