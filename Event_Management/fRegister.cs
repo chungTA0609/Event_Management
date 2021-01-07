@@ -42,6 +42,15 @@ namespace Event_Management
             {
                 MessageBox.Show("Đăng ký thành công!");
             }
+            if (service.InsertAccount(acc) == 0)
+            {
+                MessageBox.Show("Đăng ký không thành công!");
+            }
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

@@ -1,5 +1,4 @@
-﻿
-namespace Event_Management
+﻿namespace Event_Management
 {
     partial class fLogin
     {
@@ -186,4 +185,3 @@ namespace Event_Management
         private System.Windows.Forms.Button btnExit;
     }
 }
-

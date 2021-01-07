@@ -56,6 +56,32 @@ namespace Wcf
             return composite;
         }
 
+        public bool Login(string account, string password)
+        {
+            try
+            {
+                comm.CommandText = $"SELECT * FROM dbo.Account WHERE userName = N'{account}' AND passWord = N'{password}' "; ;
+                comm.CommandType = CommandType.Text;
+                conn.Open();
+                
+                Console.WriteLine();
+                Console.WriteLine(conn.ToString());
+
+                return (comm.ExecuteScalar() != null) ? true : false;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+            finally
+            {
+                if (conn != null)
+                {
+                    conn.Close();
+                }
+            }
+        }
+
         public int InsertAccount(Account account)
         {
             try
@@ -75,7 +101,7 @@ namespace Wcf
             }
             catch(Exception ex)
             {
-                throw;
+                return 0;
             }
             finally
             {
@@ -108,7 +134,7 @@ namespace Wcf
             }
             catch (Exception ex)
             {
-                throw;
+                return 0;
             }
             finally
             {

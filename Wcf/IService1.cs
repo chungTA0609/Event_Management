@@ -21,6 +21,8 @@ namespace Wcf
         int InsertAccount(Account account);
         [OperationContract]
         int InsertE(Event_A e);
+        [OperationContract]
+        bool Login(string account, string pass);
 
 
         // TODO: Add your service operations here

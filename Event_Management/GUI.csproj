@@ -157,5 +157,11 @@
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Wcf\Wcf.csproj">
+      <Project>{e395eabd-e373-4bf6-97c4-4886f0d58e39}</Project>
+      <Name>Wcf</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
