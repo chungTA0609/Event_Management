@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fMain));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
@@ -108,6 +109,7 @@
             0,
             0,
             0});
+            this.nmNotify.ValueChanged += new System.EventHandler(this.nmNotify_ValueChanged);
             // 
             // ckbNotify
             // 
@@ -118,6 +120,7 @@
             this.ckbNotify.TabIndex = 0;
             this.ckbNotify.Text = "Thông báo";
             this.ckbNotify.UseVisualStyleBackColor = true;
+            this.ckbNotify.CheckedChanged += new System.EventHandler(this.ckbNotify_CheckedChanged);
             // 
             // btnToDay
             // 
@@ -152,7 +155,6 @@
             this.pnlMatrix.Name = "pnlMatrix";
             this.pnlMatrix.Size = new System.Drawing.Size(561, 254);
             this.pnlMatrix.TabIndex = 1;
-            this.pnlMatrix.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlMatrix_Paint);
             // 
             // panel4
             // 
@@ -257,19 +259,22 @@
             // 
             this.tmNotify.Enabled = true;
             this.tmNotify.Interval = 60000;
+            this.tmNotify.Tick += new System.EventHandler(this.tmNotify_Tick);
             // 
             // Notify
             // 
+            this.Notify.Icon = ((System.Drawing.Icon)(resources.GetObject("Notify.Icon")));
             this.Notify.Text = "Lập lịch";
             this.Notify.Visible = true;
             // 
-            // fMain
+            // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(765, 370);
             this.Controls.Add(this.panel1);
-            this.Name = "fMain";
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Lập lịch công việc";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);

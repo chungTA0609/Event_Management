@@ -1,4 +1,4 @@
-﻿using Event_Management;
+﻿using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,7 +15,16 @@ namespace Event_Management
 {
     public partial class fMain : Form
     {
-        #region Peoperties
+        #region Peoperties   
+
+        private int appTime;
+
+        public int AppTime
+        {
+            get { return appTime; }
+            set { appTime = value; }
+        }
+
         private string filePath = "data.xml";
 
         private List<List<Button>> matrix;
@@ -39,7 +48,8 @@ namespace Event_Management
         public fMain()
         {
             InitializeComponent();
-
+            tmNotify.Start();
+            appTime = 0;
             LoadMatrix();
 
             try
@@ -57,62 +67,13 @@ namespace Event_Management
             Job = new PlanData();
             Job.Job = new List<PlanItem>();
             Job.Job.Add(new PlanItem()
-            // {
-            //     Date = DateTime.Now,
-            //     FromTime = new Point(4, 0),
-            //     ToTime = new Point(5, 0),
-            //     Job = "Thử nghiệm thôi",
-            //     Status = PlanItem.ListStatus[(int)EPlanItem.COMING]
-            // });
-            // Job.Job.Add(new PlanItem()
-            // {
-            //     Date = DateTime.Now,
-            //     FromTime = new Point(4, 0),
-            //     ToTime = new Point(5, 0),
-            //     Job = "Thử nghiệm thôi",
-            //     Status = PlanItem.ListStatus[(int)EPlanItem.COMING]
-            // });
-            // Job.Job.Add(new PlanItem()
-            // {
-            //     Date = DateTime.Now,
-            //     FromTime = new Point(4, 0),
-            //     ToTime = new Point(5, 0),
-            //     Job = "Thử nghiệm thôi",
-            //     Status = PlanItem.ListStatus[(int)EPlanItem.COMING]
-            // });
-            // Job.Job.Add(new PlanItem()
-            // {
-            //     Date = DateTime.Now,
-            //     FromTime = new Point(4, 0),
-            //     ToTime = new Point(5, 0),
-            //     Job = "Thử nghiệm thôi",
-            //     Status = PlanItem.ListStatus[(int)EPlanItem.COMING]
-            // });
-            // Job.Job.Add(new PlanItem()
-            // {
-            //     Date = DateTime.Now,
-            //     FromTime = new Point(4, 0),
-            //     ToTime = new Point(5, 0),
-            //     Job = "Thử nghiệm thôi",
-            //     Status = PlanItem.ListStatus[(int)EPlanItem.COMING]
-            // });
-            // Job.Job.Add(new PlanItem()
-            // {
-            //     Date = DateTime.Now,
-            //     FromTime = new Point(4, 0),
-            //     ToTime = new Point(5, 0),
-            //     Job = "Thử nghiệm thôi",
-            //     Status = PlanItem.ListStatus[(int)EPlanItem.COMING]
-            // });
-            // Job.Job.Add(new PlanItem()
-            // {
-            //     Date = DateTime.Now,
-            //     FromTime = new Point(4, 0),
-            //     ToTime = new Point(5, 0),
-            //     Job = "Thử nghiệm thôi",
-            //     Status = PlanItem.ListStatus[(int)EPlanItem.COMING]
-            // }
-            );
+            {
+                Date = DateTime.Now,
+                FromTime = new Point(4, 0),
+                ToTime = new Point(5, 0),
+                Job = "Thử nghiệm thôi",
+                Status = PlanItem.ListStatus[(int)EPlanItem.COMING]
+            });
         }
 
         void LoadMatrix()
@@ -276,9 +237,34 @@ namespace Event_Management
             SerializeToXML(Job, filePath);
         }
 
-        private void pnlMatrix_Paint(object sender, PaintEventArgs e)
+        private void tmNotify_Tick(object sender, EventArgs e)
         {
+            if (!ckbNotify.Checked)
+                return;
 
+            AppTime++;
+
+            if (AppTime < Cons.notifyTime)
+                return;
+
+            if (Job == null || Job.Job == null)
+                return;
+
+            DateTime currentDate = DateTime.Now;
+            List<PlanItem> todayjobs = Job.Job.Where(p => p.Date.Year == currentDate.Year && p.Date.Month == currentDate.Month && p.Date.Day == currentDate.Day).ToList();
+            Notify.ShowBalloonTip(Cons.notifyTimeOut, "Lịch công việc", string.Format("Bạn có {0} việc trong ngày hôm nay", todayjobs.Count), ToolTipIcon.Info);
+
+            AppTime = 0;
+        }
+
+        private void nmNotify_ValueChanged(object sender, EventArgs e)
+        {
+            Cons.notifyTime = (int)nmNotify.Value;
+        }
+
+        private void ckbNotify_CheckedChanged(object sender, EventArgs e)
+        {
+            nmNotify.Enabled = ckbNotify.Checked;
         }
     }
 }

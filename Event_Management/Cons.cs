@@ -15,5 +15,7 @@ namespace Event_Management
         public static int dateButtonHeight = 40;
 
         public static int margin = 6;
+        public static int notifyTime = 1;
+        public static int notifyTimeOut = 10000;
     }
 }

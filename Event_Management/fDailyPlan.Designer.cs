@@ -1,16 +1,4 @@
-﻿using Event_Management;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.Xml.Serialization;
-namespace Event_Management
+﻿namespace Event_Management
 {
     partial class fDailyPlan
     {
@@ -56,6 +44,8 @@ namespace Event_Management
             // 
             // panel1
             // 
+            this.panel1.AutoScroll = true;
+            this.panel1.AutoSize = true;
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.pnlJob);
             this.panel1.Location = new System.Drawing.Point(16, 33);
@@ -113,7 +103,6 @@ namespace Event_Management
             this.pnlJob.Name = "pnlJob";
             this.pnlJob.Size = new System.Drawing.Size(1019, 550);
             this.pnlJob.TabIndex = 0;
-            this.pnlJob.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlJob_Paint);
             // 
             // mnsMain
             // 
@@ -123,21 +112,21 @@ namespace Event_Management
             this.mnsiToDay});
             this.mnsMain.Location = new System.Drawing.Point(0, 0);
             this.mnsMain.Name = "mnsMain";
-            this.mnsMain.Size = new System.Drawing.Size(1043, 28);
+            this.mnsMain.Size = new System.Drawing.Size(1043, 30);
             this.mnsMain.TabIndex = 1;
             this.mnsMain.Text = "menuStrip1";
             // 
             // mnsiAddJob
             // 
             this.mnsiAddJob.Name = "mnsiAddJob";
-            this.mnsiAddJob.Size = new System.Drawing.Size(90, 24);
+            this.mnsiAddJob.Size = new System.Drawing.Size(90, 26);
             this.mnsiAddJob.Text = "Thêm việc";
             this.mnsiAddJob.Click += new System.EventHandler(this.mnsiAddJob_Click);
             // 
             // mnsiToDay
             // 
             this.mnsiToDay.Name = "mnsiToDay";
-            this.mnsiToDay.Size = new System.Drawing.Size(83, 24);
+            this.mnsiToDay.Size = new System.Drawing.Size(83, 26);
             this.mnsiToDay.Text = "Hôm nay";
             this.mnsiToDay.Click += new System.EventHandler(this.mnsiToDay_Click);
             // 
@@ -145,6 +134,8 @@ namespace Event_Management
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
+            this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1043, 629);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.mnsMain);

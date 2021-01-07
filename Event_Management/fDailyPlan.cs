@@ -110,10 +110,5 @@ namespace Event_Management
         {
             dtpkDate.Value = DateTime.Now;
         }
-
-        private void pnlJob_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
     }
 }
