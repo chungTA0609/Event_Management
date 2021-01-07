@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 
 namespace Wcf
 {
-    [DataConstract]
     public class Account
     {
         [DataMember]

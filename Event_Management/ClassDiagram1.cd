@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Event_Management.Cons">
+    <Position X="16.5" Y="1.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAAAAAAAAAAAAAAAEQAAAAAAAAAUAAAAEgA=</HashCode>
+      <FileName>Cons.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Event_Management.fDailyPlan">
+    <Position X="6.75" Y="2" Width="2" />
+    <TypeIdentifier>
+      <HashCode>BCUAAAAAAKAAAAQAAACAAgoCAAACAMABABAAAQAgESg=</HashCode>
+      <FileName>fDailyPlan.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Event_Management.fLogin">
+    <Position X="1.75" Y="2" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAQECAAABAAAACAAAACACAACAAAAAAAAQBgAEQ=</HashCode>
+      <FileName>fLogin.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Event_Management.fMain">
+    <Position X="4" Y="2" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>BACAggACACRAAAQAAkDCADISYAAmwFBQgEAICwCEAAE=</HashCode>
+      <FileName>fMain.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Event_Management.fRegister">
+    <Position X="9.25" Y="2" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAQMCAAABAAAACAAAACACAAAIAAAAAAAQAkAEA=</HashCode>
+      <FileName>fRegister.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Event_Management.PlanData">
+    <Position X="20.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAIAAAACAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>PlanData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Event_Management.PlanItem">
+    <Position X="18.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQACAAEAAgAAAAAQAAAgAIAAIACAAABAAAAAQAAAAA=</HashCode>
+      <FileName>PlanItem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.Windows.Forms.UserControl" Collapsed="true">
+    <Position X="13" Y="0.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Windows.Forms.Form" Collapsed="true">
+    <Position X="6" Y="0.5" Width="1.5" />
+    <NestedTypes>
+      <Class Name="System.Windows.Forms.Form.ControlCollection" Collapsed="true">
+        <TypeIdentifier />
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Object" Collapsed="true">
+    <Position X="19.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="Event_Management.AJob" Collapsed="true">
+    <Position X="13" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABgAAAACAEABAABACAEAICABACAUAACQEwAQAAAQQ=</HashCode>
+      <FileName>AJob.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

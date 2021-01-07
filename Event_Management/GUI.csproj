@@ -84,12 +84,6 @@
     <Compile Include="fRegister.Designer.cs">
       <DependentUpon>fRegister.cs</DependentUpon>
     </Compile>
-    <Compile Include="OneEvent.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="OneEvent.Designer.cs">
-      <DependentUpon>OneEvent.cs</DependentUpon>
-    </Compile>
     <Compile Include="PlanData.cs" />
     <Compile Include="PlanItem.cs" />
     <Compile Include="Program.cs" />
@@ -109,9 +103,6 @@
     <EmbeddedResource Include="fRegister.resx">
       <DependentUpon>fRegister.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="OneEvent.resx">
-      <DependentUpon>OneEvent.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -121,6 +112,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="ClassDiagram1.cd" />
     <None Include="Connected Services\ServiceReference1\Event_Management.ServiceReference1.CompositeType.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
